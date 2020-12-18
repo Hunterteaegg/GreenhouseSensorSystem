@@ -58,15 +58,47 @@
 #define SHT31_COM_RESET_M           0x30    //reset Command (MSB)
 #define SHT31_COM_RESET_L           0xA2    //reset Command (LSB)
 
+//SHT31 data type
 typedef struct {
 	double temp;
 	double humi;
 } SHT31_DATA_T;
 
 /*
-void SHT31_init(void);
+ * @brief Initialize SHT31 device by sending 2-byte command to specific address
+ * @param addr The slave address of SHT31
+ * @param com_MSB MSB of command
+ * @param com_LSB LSB of command
+ * @return {none}
+ */
+void SHT31_init(uint8_t addr, uint8_t com_MSB, uint8_t com_LSB);
+
+/*
+ * @brief Read data from SHT31
+ * @param {none}
+ * @return Data from SHT31
+ */
 SHT31_DATA_T SHT31_readData(void);
-void SHT31_deinit(void);
-*/
+
+/*
+ * @brief ArtMode activate
+ * @param {none}
+ * @return {none}
+ */
+void SHT31_artMode(void);
+
+/*
+ * @brief Break conversion of SHT31
+ * @param {none}
+ * @return {none}
+ */
+void SHT31_break(void);
+
+/*
+ * @brief Soft-Reset SHT31
+ * @param {none}
+ * @return {none}
+ */
+void SHT31_reset(void);
 
 #endif /* PERIPHERAL_INC_SHT31_H_ */
