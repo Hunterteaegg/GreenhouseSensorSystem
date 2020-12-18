@@ -25,6 +25,8 @@ hi2c2               0x54              Core/Src/main.o
 uwTick              0x4               Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
 xQueueRegistry      0x40              Middlewares/Third_Party/FreeRTOS/Source/queue.o
 pFlash              0x20              Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o
+com                 0x1               Drivers/Peripheral/Src/GY30.o
+rawData             0x2               Drivers/Peripheral/Src/GY30.o
 htim1               0x48              Core/Src/stm32f1xx_hal_timebase_tim.o
 
 Discarded input sections
@@ -729,6 +731,100 @@ Discarded input sections
  .text          0x0000000000000000       0x14 Core/Startup/startup_stm32f103c8tx.o
  .data          0x0000000000000000        0x0 Core/Startup/startup_stm32f103c8tx.o
  .bss           0x0000000000000000        0x0 Core/Startup/startup_stm32f103c8tx.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .group         0x0000000000000000        0xc Drivers/Peripheral/Src/GY30.o
+ .text          0x0000000000000000        0x0 Drivers/Peripheral/Src/GY30.o
+ .data          0x0000000000000000        0x0 Drivers/Peripheral/Src/GY30.o
+ .bss           0x0000000000000000        0x0 Drivers/Peripheral/Src/GY30.o
+ .text.GY30_init
+                0x0000000000000000       0x38 Drivers/Peripheral/Src/GY30.o
+ .text.GY30_getData
+                0x0000000000000000       0x5c Drivers/Peripheral/Src/GY30.o
+ .debug_info    0x0000000000000000      0x6b1 Drivers/Peripheral/Src/GY30.o
+ .debug_abbrev  0x0000000000000000      0x18d Drivers/Peripheral/Src/GY30.o
+ .debug_aranges
+                0x0000000000000000       0x28 Drivers/Peripheral/Src/GY30.o
+ .debug_ranges  0x0000000000000000       0x18 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x1ac Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0xa5a Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x52 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x22 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x8e Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x51 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0xef Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x6a Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x1df Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x21b Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x2e Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x22 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x1c Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x22 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0xc3 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0xd23 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000     0xe097 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x43 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000     0x3468 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x174 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x5c Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x5be Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x289 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x1cb Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x114 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x1b2 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x27 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x136 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x1bc Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x34 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x3c Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x57 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x88 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x241 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x287 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x141 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000      0x8d1 Drivers/Peripheral/Src/GY30.o
+ .debug_macro   0x0000000000000000       0x83 Drivers/Peripheral/Src/GY30.o
+ .debug_line    0x0000000000000000      0x6b6 Drivers/Peripheral/Src/GY30.o
+ .debug_str     0x0000000000000000    0x83172 Drivers/Peripheral/Src/GY30.o
+ .comment       0x0000000000000000       0x7c Drivers/Peripheral/Src/GY30.o
+ .debug_frame   0x0000000000000000       0x5c Drivers/Peripheral/Src/GY30.o
+ .ARM.attributes
+                0x0000000000000000       0x33 Drivers/Peripheral/Src/GY30.o
+ COMMON         0x0000000000000000        0x6 Drivers/Peripheral/Src/GY30.o
  .group         0x0000000000000000        0xc Drivers/Peripheral/Src/SHT31.o
  .group         0x0000000000000000        0xc Drivers/Peripheral/Src/SHT31.o
  .group         0x0000000000000000        0xc Drivers/Peripheral/Src/SHT31.o
@@ -3766,6 +3862,7 @@ LOAD Core/Src/syscalls.o
 LOAD Core/Src/sysmem.o
 LOAD Core/Src/system_stm32f1xx.o
 LOAD Core/Startup/startup_stm32f103c8tx.o
+LOAD Drivers/Peripheral/Src/GY30.o
 LOAD Drivers/Peripheral/Src/SHT31.o
 LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
 LOAD Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
