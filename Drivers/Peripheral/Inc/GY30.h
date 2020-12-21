@@ -8,6 +8,8 @@
 #ifndef PERIPHERAL_INC_GY30_H_
 #define PERIPHERAL_INC_GY30_H_
 
+#include <stdint.h>
+
 //GY30 Slave Address
 #define GY30_ADDR_L				(0x23 << 1)
 #define GY30_ADDR_H				(0x5C << 1)
@@ -27,5 +29,8 @@
 
 //GY30 Mode Selection
 #define GY30_MODE				GY30_CON_H_MODE
+
+void GY30_init(uint8_t addr);
+double GY30_getData(uint8_t addr);
 
 #endif /* PERIPHERAL_INC_GY30_H_ */
