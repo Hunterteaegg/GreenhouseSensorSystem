@@ -12,13 +12,15 @@
 #include <stm32f1xx_hal.h>
 
 void LCD_init(void);
-void LCD_write(uint8_t dat);
+//void LCD_write(uint8_t dat);
 void LCD_writeCom(uint8_t com);
 void LCD_writeData(uint8_t data);
 void LCD_show_dht11(uint8_t *result);
 void LCD_show_GY30(uint16_t result);
-void LCD_show_SHT31(uint16_t result);
+void LCD_show_SHT31(uint16_t temp, uint16_t humi);
 void LCD_show_bmp280_temp(uint32_t result);
 void LCD_show_bmp280_press(uint32_t result);
+uint8_t CRC8_compute(const uint8_t *pdat, short len, const uint8_t factor);
+void LCD_showByte(uint8_t byte);
 
 #endif /* INC_LCD1602_H_ */

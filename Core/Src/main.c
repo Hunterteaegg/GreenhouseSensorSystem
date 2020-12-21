@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LCD1602.h"
+#include "GY30.h"
+#include "SHT31.h"
 #include <string.h>
 /* USER CODE END Includes */
 
@@ -43,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c2;
 
+static SHT31_DATA_T sht31Data;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -90,8 +93,9 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-  const char* stringSCAU = "SCAU";
-  LCD_init();
+  //const char* stringSCAU = "SCAU";
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,10 +103,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  for(short i = 0;i < strlen(stringSCAU);i++)
-	  {
-		  LCD_writeData(stringSCAU[i]);
-	  }
+	  LCD_init();
+
+	  /***
+	  GY30_init(GY30_ADDR_L);
+	  uint16_t luminance = GY30_getData(GY30_ADDR_L);
+	  LCD_show_GY30(luminance);
+	  ***/
+	  SHT31_init(SHT31_COM_N_CS, SHT31_COM_N_CS_H);
+	  sht31Data=SHT31_readData();
+	  LCD_show_SHT31(sht31Data.temp * 1000, sht31Data.humi * 1000);
+
+
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

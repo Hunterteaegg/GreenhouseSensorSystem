@@ -9,7 +9,9 @@
 #include <stdbool.h>
 #include "stm32f1xx_hal.h"
 
-void LCD_write(uint8_t dat)
+uint8_t CRC8_compute(const uint8_t *pdat, short len, const uint8_t factor);
+
+static void LCD_write(uint8_t dat)
 {
 	HAL_GPIO_WritePin(LCD_D0_GPIO_Port, LCD_D0_Pin, ((dat>>0)&0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(LCD_D1_GPIO_Port, LCD_D1_Pin, ((dat>>1)&0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);
@@ -71,7 +73,55 @@ void LCD_show_GY30(uint16_t result)
 	HAL_Delay(1000);
 }
 
-void LCD_show_SHT31(uint16_t result)
+void LCD_show_SHT31(uint16_t temp, uint16_t humi)
 {
-	;
+	LCD_writeData((temp / 10000)+48);
+	LCD_writeData((temp % 10000 /1000)+48);
+	LCD_writeData((temp % 1000 / 100)+48);
+	LCD_writeData((temp % 100 / 10)+48);
+	LCD_writeData((temp % 10)+48);
+	LCD_writeData('C');
+	LCD_writeData(' ');
+
+	LCD_writeData((humi / 10000)+48);
+	LCD_writeData((humi % 10000 /1000)+48);
+	LCD_writeData((humi % 1000 / 100)+48);
+	LCD_writeData((humi % 100 / 10)+48);
+	LCD_writeData((humi % 10)+48);
+	LCD_writeData('%');
+	LCD_writeData(' ');
+
+
+}
+
+void LCD_showByte(uint8_t byte)
+{
+	LCD_writeData((byte / 100)+48);
+	LCD_writeData((byte % 100 / 10)+48);
+	LCD_writeData((byte % 10)+48);
+	LCD_writeData(' ');
+}
+
+uint8_t CRC8_compute(const uint8_t *pdat, short len, const uint8_t factor)
+{
+    uint8_t j;
+    uint8_t crc = 0xFF;
+
+    while (len--)
+    {
+        crc ^= (*pdat++);
+        for (j = 8; j > 0; j--)
+        {
+            if (crc & 0x80)
+            {
+                crc = (crc << 1) ^ factor;
+            }
+            else
+            {
+                crc = (crc << 1);
+            }
+        }
+    }
+
+    return crc;
 }

@@ -14,7 +14,8 @@
 #define SHT31_PERIODIC_MODE			0x02
 #define SHT31_MODE					SHT31_SINGLESHOT_MODE
 
-#define SHT31_SLAVE_ADDRESS			(0x44 << 1)
+#define SHT31_WRITE_ADDR			(0x44 << 1)
+#define SHT31_READ_ADDR				(0x44 << 1)
 
 //SHT31 Single_Shot Mode Command
 #define SHT31_COM_CS                0x2C    //Clock stretching (MSB)
@@ -66,12 +67,11 @@ typedef struct {
 
 /*
  * @brief Initialize SHT31 device by sending 2-byte command to specific address
- * @param addr The slave address of SHT31
  * @param com_MSB MSB of command
  * @param com_LSB LSB of command
  * @return {none}
  */
-void SHT31_init(uint8_t addr, uint8_t com_MSB, uint8_t com_LSB);
+void SHT31_init(uint8_t com_MSB, uint8_t com_LSB);
 
 /*
  * @brief Read data from SHT31

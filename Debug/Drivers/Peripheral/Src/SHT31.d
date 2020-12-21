@@ -25,7 +25,8 @@ Drivers/Peripheral/Src/SHT31.o: ../Drivers/Peripheral/Src/SHT31.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/main.h \
- E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/SHT31.h
+ E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/SHT31.h \
+ E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/LCD1602.h
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -80,3 +81,5 @@ Drivers/Peripheral/Src/SHT31.o: ../Drivers/Peripheral/Src/SHT31.c \
 ../Core/Inc/main.h:
 
 E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/SHT31.h:
+
+E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/LCD1602.h:
