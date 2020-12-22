@@ -94,6 +94,7 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   //const char* stringSCAU = "SCAU";
+  LCD_init();
 
 
   /* USER CODE END 2 */
@@ -103,16 +104,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  LCD_init();
 
-	  /***
+	  LCD_writeCom(0x80|0x40);
 	  GY30_init(GY30_ADDR_L);
 	  uint16_t luminance = GY30_getData(GY30_ADDR_L);
 	  LCD_show_GY30(luminance);
-	  ***/
+
+	  LCD_writeCom(0x80|0x00);
 	  SHT31_init(SHT31_COM_N_CS, SHT31_COM_N_CS_H);
 	  sht31Data=SHT31_readData();
 	  LCD_show_SHT31(sht31Data.temp * 1000, sht31Data.humi * 1000);
+
+	  LCD_writeCom(0x02);
+	  HAL_Delay(500);
 
 
 

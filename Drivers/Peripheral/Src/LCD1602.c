@@ -77,14 +77,17 @@ void LCD_show_SHT31(uint16_t temp, uint16_t humi)
 {
 	LCD_writeData((temp / 10000)+48);
 	LCD_writeData((temp % 10000 /1000)+48);
+	LCD_writeData('.');
 	LCD_writeData((temp % 1000 / 100)+48);
 	LCD_writeData((temp % 100 / 10)+48);
 	LCD_writeData((temp % 10)+48);
+	LCD_writeData(0xDF);
 	LCD_writeData('C');
 	LCD_writeData(' ');
 
 	LCD_writeData((humi / 10000)+48);
 	LCD_writeData((humi % 10000 /1000)+48);
+	LCD_writeData('.');
 	LCD_writeData((humi % 1000 / 100)+48);
 	LCD_writeData((humi % 100 / 10)+48);
 	LCD_writeData((humi % 10)+48);
