@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 # GreenhouseSensorSystem
-=======
-# GreenhouseSensorSystem
->>>>>>> development
