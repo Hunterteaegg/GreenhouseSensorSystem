@@ -1,6 +1,6 @@
-Drivers/Peripheral/Src/LCD1602.o: ../Drivers/Peripheral/Src/LCD1602.c \
- E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/lcd1602.h \
- ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o: \
+ ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -26,10 +26,6 @@ Drivers/Peripheral/Src/LCD1602.o: ../Drivers/Peripheral/Src/LCD1602.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-
-E:/MyCode/GreenhouseSensorSystem/Drivers/Peripheral/Inc/lcd1602.h:
-
-../Core/Inc/main.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
