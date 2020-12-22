@@ -1,0 +1,5 @@
+SHT31.c:15:6:SHT31_init	24	static
+SHT31.c:31:14:SHT31_readData	64	static
+SHT31.c:72:6:SHT31_artMode	4	static
+SHT31.c:86:6:SHT31_break	16	static
+SHT31.c:93:6:SHT31_reset	16	static
