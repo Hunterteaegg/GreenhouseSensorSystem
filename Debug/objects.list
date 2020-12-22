@@ -7,6 +7,7 @@
 "Core/Src/system_stm32f1xx.o"
 "Core/Startup/startup_stm32f103c8tx.o"
 "Drivers/Peripheral/Src/GY30.o"
+"Drivers/Peripheral/Src/HC-05.o"
 "Drivers/Peripheral/Src/LCD1602.o"
 "Drivers/Peripheral/Src/SHT31.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
@@ -23,3 +24,4 @@
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"

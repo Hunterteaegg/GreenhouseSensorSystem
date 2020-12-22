@@ -25,7 +25,9 @@
 #include "LCD1602.h"
 #include "GY30.h"
 #include "SHT31.h"
+#include "HC-05.h"
 #include <string.h>
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +47,8 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c2;
 
+UART_HandleTypeDef huart2;
+static char stringSend[128];
 static SHT31_DATA_T sht31Data;
 /* USER CODE BEGIN PV */
 
@@ -54,6 +58,7 @@ static SHT31_DATA_T sht31Data;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C2_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -92,9 +97,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C2_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  //const char* stringSCAU = "SCAU";
-  LCD_init();
+  LCD_init();	//initialize LCD1602
 
 
   /* USER CODE END 2 */
@@ -105,21 +110,23 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-	  LCD_writeCom(0x80|0x40);
-	  GY30_init(GY30_ADDR_L);
-	  uint16_t luminance = GY30_getData(GY30_ADDR_L);
-	  LCD_show_GY30(luminance);
+	  LCD_writeCom(0x80|0x40);	//move cursor to position 0x40(the beginning of the second line)
+	  GY30_init(GY30_ADDR_L);	//initialize GY30 sensor
+	  uint16_t luminance = GY30_getData(GY30_ADDR_L);	//get GY30 data
+	  LCD_show_GY30(luminance);	//show GY30 data to LCD1602
 
-	  LCD_writeCom(0x80|0x00);
-	  SHT31_init(SHT31_COM_N_CS, SHT31_COM_N_CS_H);
-	  sht31Data=SHT31_readData();
-	  LCD_show_SHT31(sht31Data.temp * 1000, sht31Data.humi * 1000);
+	  LCD_writeCom(0x80|0x00);	//move cursor to position 0x00(the beginning of the first line)
+	  SHT31_init(SHT31_COM_N_CS, SHT31_COM_N_CS_H);	//initialize SHT31 sensor with setting consist of no-clock-stretch and high repeatibility
+	  sht31Data = SHT31_readData();	//get SHT31 data
+	  LCD_show_SHT31(sht31Data.temp * 1000, sht31Data.humi * 1000);	//show SHT31 data to LCD1602
+	  LCD_writeCom(0x02);	//reset cursor
 
-	  LCD_writeCom(0x02);
-	  HAL_Delay(500);
+	  //formatted-print string
+	  snprintf(stringSend, sizeof(stringSend)-1, "Temperature: %d, Humidity: %d%%, Luminance: %dlx." ,(int)sht31Data.temp, (int)sht31Data.humi, (int)luminance);
 
+	  HC05_transmit(stringSend, strlen(stringSend));	//send text to HC05
 
-
+	  HAL_Delay(500);	//delay 500 miliseconds
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -191,6 +198,39 @@ static void MX_I2C2_Init(void)
   /* USER CODE BEGIN I2C2_Init 2 */
 
   /* USER CODE END I2C2_Init 2 */
+
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
 
 }
 
