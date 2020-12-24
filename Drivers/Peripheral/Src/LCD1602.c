@@ -9,8 +9,10 @@
 #include <stdbool.h>
 #include "stm32f1xx_hal.h"
 
+//CRC-8 checksum function
 uint8_t CRC8_compute(const uint8_t *pdat, short len, const uint8_t factor);
 
+//internel function, display single byte on LCD1602
 static void LCD_write(uint8_t dat)
 {
 	HAL_GPIO_WritePin(LCD_D0_GPIO_Port, LCD_D0_Pin, ((dat>>0)&0x01)?GPIO_PIN_SET:GPIO_PIN_RESET);

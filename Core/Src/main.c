@@ -45,11 +45,11 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c2;
+I2C_HandleTypeDef hi2c2;		//i2c-master handle
 
-UART_HandleTypeDef huart2;
-static char stringSend[128];
-static SHT31_DATA_T sht31Data;
+UART_HandleTypeDef huart2;		//uart handle
+static char stringSend[128];	//string buffer ready to be send
+static SHT31_DATA_T sht31Data;	//SHT31 data structure
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */

@@ -14,6 +14,6 @@ static char *uartEnd = "\r\n";
 
 void HC05_transmit(char *pdata,int len)
 {
-	HAL_UART_Transmit(&huart2, (uint8_t*)pdata, len, 0xFF);
+	HAL_UART_Transmit(&huart2, (uint8_t*)pdata, len, 0xFF);					//transmit data through HC-05 module
 	HAL_UART_Transmit(&huart2, (uint8_t*)uartEnd, strlen(uartEnd), 0xFF);	//transmit blank characters to end transmission
 }
